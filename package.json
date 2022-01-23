@@ -1,0 +1,11 @@
+{
+  "name": "wl-homepage",
+  "version": "1.0.0",
+  "description": "This is the page of wrapping-letters",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Carlos && Ponce",
+  "license": "ISC"
+}
