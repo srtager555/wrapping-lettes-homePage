@@ -3,3 +3,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* center all body content with flex */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 50px;
+}
+

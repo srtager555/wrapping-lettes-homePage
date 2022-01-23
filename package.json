@@ -2,14 +2,15 @@
   "name": "wl-homepage",
   "version": "1.0.0",
   "description": "This is the page of wrapping-letters",
+  "author": "Carlos && Ponce",
+  "license": "ISC",
+
   "main": "src/index.js",
   "scripts": {
     "start": "webpack-dev-server --config webpack.config.js",
-    "build": "webpack --config webpack.config.js",
-    
+    "build": "webpack --config webpack.config.js"
+
   },
-  "author": "Carlos && Ponce",
-  "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.16.12",
     "@babel/preset-env": "^7.16.11",
