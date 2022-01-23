@@ -4,7 +4,9 @@
   "description": "This is the page of wrapping-letters",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server --config webpack.config.js",
+    "build": "webpack --config webpack.config.js",
+    
   },
   "author": "Carlos && Ponce",
   "license": "ISC",
