@@ -1,22 +1,22 @@
-const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const path = require("path");
 
 module.exports = {
-   entry: "./src/index.js",
+   mode: "development",
    output: {
-      path: __dirname + "/build",
+      path: path.resolve(__dirname, "/build"),
    },
    plugins: [
       new HtmlWebpackPlugin({ template: "./public/index.html" }),
       new MiniCssExtractPlugin(),
    ],
    devServer: {
-    static: {
-        path: path.join(__dirname, "public"),
-    },
-    compress: true,
-    port: 9000,
+      static: {
+         directory: path.join(__dirname, "public"),
+      },
+      compress: true,
+      port: 9000,
    },
    module: {
       rules: [
