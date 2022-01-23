@@ -11,6 +11,13 @@ module.exports = {
       new HtmlWebpackPlugin({ template: "./public/index.html" }),
       new MiniCssExtractPlugin(),
    ],
+   devServer: {
+    static: {
+        path: path.join(__dirname, "public"),
+    },
+    compress: true,
+    port: 9000,
+   },
    module: {
       rules: [
          {
