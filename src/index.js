@@ -1,8 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import App from "./App";
+import { BrowserRouter } from "react-router-dom";
 
-import "./css/index.css";
+import { App as Application } from "./App";
+
+import "@Styles/index.css";
+
+function App() {
+   return (
+      <BrowserRouter>
+         <Application />
+      </BrowserRouter>
+   );
+}
 
 ReactDOM.render(<App />, document.getElementById("root"));
