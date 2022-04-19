@@ -43,7 +43,7 @@ export function HomeSwitch({ bottom = false }) {
             >
                npm install wrapping-letters-react -D
             </button>
-            <div className="HomePage--cta-links">
+            <div className={`HomePage--cta-links${bottom? " nowrapp": ""}`}>
                {!bottom ? topLinks() : bottomLinks()}
             </div>
          </div>
