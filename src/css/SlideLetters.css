@@ -1,0 +1,48 @@
+.container.container__SlideLetters {
+   position: fixed;
+   top: 0;
+   left: 0;
+   max-width: initial;
+}
+.container__SlideLetters .container__SlideLetters--slideLetter {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    opacity: 1;
+    transition: 1s ease-in-out;
+}
+.container__SlideLetters .container__SlideLetters--slideLetter.opacity {
+    opacity: 0.1;
+}
+.container__SlideLetters .container__SlideLetters--slideLetter.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+.container__SlideLetters .container__SlideLetters--slideLetter:first-child {
+    margin-top: 40px;
+}
+.container__SlideLetters .container__SlideLetters--slideLetter span{
+    display: inline-block;
+    font-size: 134px;
+    font-family: "Poppins", sans-serif;
+    white-space: pre;
+    text-transform: uppercase;
+    line-height: 180px;
+}
+.container__SlideLetters .container__SlideLetters--slideLetter :is(span:nth-child(1), span:nth-child(2)) {
+    animation: slideLetter 120s linear infinite;
+}
+.container__SlideLetters .container__SlideLetters--slideLetter:nth-child(odd) :is(span:nth-child(1), span:nth-child(2)) {
+    animation: slideLetter 150s linear infinite;
+}
+
+@keyframes slideLetter {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}

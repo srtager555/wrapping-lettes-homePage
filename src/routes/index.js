@@ -1,13 +1,22 @@
-import React from "react"
+import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
+
+import { SlideLetters } from "@Components/slideLetters";
+import { Home } from "@Pages/home";
 
 
 export function routes() {
-    return (
-        <Routes>
-            <Route path="/" element={<div>Hola</div>}/>
-            <Route path="/documentation" element={<div>documetation</div>}/>
-            <Route path="/*" element={<div>otra linea</div>}/>
-        </Routes>
-    )
+
+   const [sLettersOpts, setSLettersOpts] = useState({});
+
+   return (
+      <>
+        <SlideLetters sLettersOpts={sLettersOpts}/>
+         <Routes>
+            <Route path="/" element={<Home setSLettersOpts={setSLettersOpts} />} />
+            <Route path="/documentation" element={<div>documetation</div>} />
+            <Route path="/*" element={<div>otra linea</div>} />
+         </Routes>
+      </>
+   );
 }
