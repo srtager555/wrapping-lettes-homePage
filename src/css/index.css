@@ -10,6 +10,7 @@ body {
 }
 
 .container {
+    height: 100vh;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
@@ -17,4 +18,13 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.wrapping-letters--logo {
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+    font-size: 2rem;
+    border: 2px solid #fff;
+    padding-left: 13px;
+    padding-right: 26px;
 }
