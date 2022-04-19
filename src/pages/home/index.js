@@ -1,9 +1,17 @@
 import React, { useLayoutEffect } from "react";
 
-export function Home({ setSLettersOpts={} }) {
+import { HomeSwitch } from "@Components/HomeSwitch";
+
+import "@Styles/HomePage.css";
+
+export function Home({ setSLettersOpts = {} }) {
    useLayoutEffect(() => {
       setSLettersOpts({ Slide1: [true, true], Slide2: [true, true] });
    }, []);
 
-   return <div>Home</div>;
+   return (
+      <div className="container HomePage">
+         <HomeSwitch />
+      </div>
+   );
 }
