@@ -5,7 +5,8 @@
         "alias": {
           "@Styles": "./src/css",
           "@Src": "./src",
-          "@Components": "./src/components"
+          "@Components": "./src/components",
+          "@Pages": "./src/pages"
         }
       }]
     ]
