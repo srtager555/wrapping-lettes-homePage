@@ -1,4 +1,6 @@
-.container.HomePage {
+.HomePage__main {
+}
+.container.HomePage--container {
    justify-content: flex-end;
 }
 
@@ -13,12 +15,16 @@
    margin: 0 auto;
 }
 .HomePage--introduction {
+   width: 83%;
    margin-bottom: 50px;
+}
+.HomePage--introduction.bottom {
+   margin-bottom: 20px;
 }
 
 .HomePage--introducion-text {
    margin-top: 30px;
-   margin-bottom: 30px;
+   margin-bottom: 10px;
 }
 .HomePage--introducion-text p {
    font-family: "Noto Sans Display", sans-serif;
@@ -27,18 +33,41 @@
 
 .HomePage--cta {
    max-width: 420px;
-   margin-bottom: 70px;
+   margin-bottom: 100px;
 }
+.HomePage--cta.bottom {
+   max-width: 420px;
+   margin-bottom: 40px;
+}
+
 .HomePage--cta .HomePage--cta-copyButton {
-    font-size: 16px;
-    font-family: 'Source Code Pro', monospace;
-    width: 100%;
-    border: none;
-    border-radius: 3px;
-    padding: 13px 16px;
-    color: #fff;
-    background-color: #E07070;
-    cursor: pointer;
+   position: relative;
+   font-size: 14px;
+   font-family: "Source Code Pro", monospace;
+   width: 100%;
+   border: none;
+   border-radius: 3px;
+   padding: 13px 16px;
+   color: #fff;
+   background-color: #e07070;
+   cursor: pointer;
+}
+.HomePage--cta .HomePage--cta-copyButton::before {
+   content: "Copy";
+   position: absolute;
+   top: 0;
+   left: 3%;
+   padding: 5px 10px;
+   background-color: #e07070;
+   color: #fff;
+   border-radius: 3px;
+   font-size: 14px;
+   font-family: "Source Code Pro", monospace;
+   transition: 200ms ease-in-out;
+   z-index: -1;
+}
+.HomePage--cta .HomePage--cta-copyButton:hover::before {
+   top: -70%;
 }
 
 .HomePage--cta .HomePage--cta-links {
@@ -50,7 +79,13 @@
    padding-top: 20px;
    width: 90%;
 }
-.HomePage--cta .HomePage--cta-links::before{
+.HomePage--cta.bottom .HomePage--cta-links {
+   justify-content: flex-start;
+   align-items: flex-start;
+   flex-direction: column;
+   margin-top: 30px;
+}
+.HomePage--cta .HomePage--cta-links::before {
    content: "";
    position: absolute;
    top: 0;
@@ -59,19 +94,23 @@
    height: 1px;
    background-color: #fff;
 }
-.HomePage--cta .HomePage--cta-links.nowrapp {
-   flex-direction: column;
-}
 
 .HomePage--cta .HomePage--cta-links .HomePage--cta-link {
    position: relative;
    font-size: 16px;
-   font-family: 'Noto Sans Display', sans-serif;
+   font-family: "Noto Sans Display", sans-serif;
    color: #fff;
    text-decoration: none;
    padding: 0 5px;
    padding-bottom: 10px;
 }
+.HomePage--cta .HomePage--cta-links .HomePage--cta-link {
+   font-size: 14px;
+}
+.HomePage--cta.bottom .HomePage--cta-links .HomePage--cta-link {
+   margin-bottom: 10px;
+}
+
 .HomePage--cta .HomePage--cta-links .HomePage--cta-link::before {
    content: "";
    position: absolute;
@@ -82,6 +121,9 @@
    background-color: #fff;
    transition: 200ms ease;
 }
+.HomePage--cta.bottom .HomePage--cta-links .HomePage--cta-link::before {
+   bottom: 20%;
+}
 .HomePage--cta .HomePage--cta-links .HomePage--cta-link:hover::before {
-   bottom: 10%;
+   bottom: 30%;
 }

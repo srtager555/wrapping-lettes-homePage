@@ -10,8 +10,9 @@ export function Home({ setSLettersOpts = {} }) {
    }, []);
 
    return (
-      <div className="container HomePage">
+      <div className="HomePage__main">
          <HomeSwitch />
+         <HomeSwitch bottom={true}/>
       </div>
    );
 }

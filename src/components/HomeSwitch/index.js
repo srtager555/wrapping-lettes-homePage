@@ -22,7 +22,8 @@ export function HomeSwitch({ bottom = false }) {
 
    return (
       <>
-         <div className="HomePage--introduction">
+      <div className="container HomePage--container">
+         <div className={`HomePage--introduction${!bottom? "" : " bottom"}`}>
             <span className="wrapping-letters--logo">WL</span>
             <div className="HomePage--introducion-text">
                <p>
@@ -35,7 +36,7 @@ export function HomeSwitch({ bottom = false }) {
                </p>
             </div>
          </div>
-         <div className="HomePage--cta">
+         <div className={`HomePage--cta${!bottom? "" : " bottom"}`}>
             <button
                onClick={handleCopyNpm}
                ref={buttonCopyRef}
@@ -43,10 +44,11 @@ export function HomeSwitch({ bottom = false }) {
             >
                npm install wrapping-letters-react -D
             </button>
-            <div className={`HomePage--cta-links${bottom? " nowrapp": ""}`}>
+            <div className={`HomePage--cta-links`}>
                {!bottom ? topLinks() : bottomLinks()}
             </div>
          </div>
+      </div>
       </>
    );
 }
