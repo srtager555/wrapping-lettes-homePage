@@ -1,13 +1,22 @@
-import React, { useState, useLayoutEffect } from "react";
+import React, { useState, useRef, useLayoutEffect, useEffect } from "react";
 import "@Styles/SlideLetters.css";
 
-export function SlideLetters({ sLettersOpts = {} }) {
+export function SlideLetters({ sLettersOpts = {}, scrollPosition }) {
    const [slide1, setSlide1] = useState([false, false]);
    const [slide2, setSlide2] = useState([false, false]);
    const [slide3, setSlide3] = useState([false, false]);
    const [slide4, setSlide4] = useState([false, false]);
    const [slide5, setSlide5] = useState([false, false]);
    const [slide6, setSlide6] = useState([false, false]);
+
+   const arrSlide = [
+      [slide1, setSlide1],
+      [slide2, setSlide2],
+      [slide3, setSlide3],
+      [slide4, setSlide4],
+      [slide5, setSlide5],
+      [slide6, setSlide6],
+   ];
 
    const {
       Slide1 = [],
@@ -26,6 +35,18 @@ export function SlideLetters({ sLettersOpts = {} }) {
       setSlide5([Slide5[0], Slide5[1]]);
       setSlide6([Slide6[0], Slide6[1]]);
    }, [sLettersOpts]);
+
+   useEffect(() => {
+      arrSlide.forEach((element, index) => {
+         if (scrollPosition >= document.body.clientHeight - window.innerHeight * 1.05) {
+            if (element[0][0] === true) element[1]([true, true]);
+         } else if (scrollPosition < window.innerHeight / 3) {
+            if (element[0][0] === true) element[1]([true, true]);
+         } else {
+            if (element[0][0] === true) element[1]([true, false]);
+         }
+      });
+   }, [scrollPosition]);
 
    return (
       <div className="container container__SlideLetters">

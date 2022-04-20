@@ -5,13 +5,13 @@ import { SlideLetters } from "@Components/slideLetters";
 import { Home } from "@Pages/home";
 
 
-export function routes() {
+export function routes({ scrollPosition }) {
 
    const [sLettersOpts, setSLettersOpts] = useState({});
 
    return (
       <>
-        <SlideLetters sLettersOpts={sLettersOpts}/>
+        <SlideLetters sLettersOpts={sLettersOpts} scrollPosition={scrollPosition} />
          <Routes>
             <Route path="/" element={<Home setSLettersOpts={setSLettersOpts} />} />
             <Route path="/documentation" element={<div>documetation</div>} />
