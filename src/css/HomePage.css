@@ -3,6 +3,10 @@
 .container.HomePage--container {
    justify-content: flex-end;
 }
+.HomePage--container .HomePage--container-main {
+   width: 100%;
+   height: auto;
+}
 
 .HomePage--introduction,
 .HomePage--cta {
@@ -11,7 +15,7 @@
    justify-content: center;
    align-items: center;
    width: 90%;
-   max-width: 400px;
+   max-width: 380px;
    margin: 0 auto;
 }
 .HomePage--introduction {
@@ -32,7 +36,7 @@
 }
 
 .HomePage--cta {
-   max-width: 420px;
+   max-width: 400px;
    margin-bottom: 100px;
 }
 .HomePage--cta.bottom {
@@ -52,6 +56,21 @@
    background-color: #e07070;
    cursor: pointer;
 }
+.HomePage--cta .HomePage--cta-copyButton::after {
+   content: "// Thanks you for this opportunity!";
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   width: 100%;
+   background-color: #e07070;
+   opacity: 0;
+   visibility: hidden;
+}
+.HomePage--cta .HomePage--cta-copyButton:active::after {
+   opacity: 1;
+   visibility: visible;
+}
 .HomePage--cta .HomePage--cta-copyButton::before {
    content: "Copy";
    position: absolute;
@@ -68,6 +87,9 @@
 }
 .HomePage--cta .HomePage--cta-copyButton:hover::before {
    top: -70%;
+}
+.HomePage--cta .HomePage--cta-copyButton:active::before {
+   content: "Copied!";
 }
 
 .HomePage--cta .HomePage--cta-links {
@@ -96,13 +118,10 @@
 }
 
 .HomePage--cta .HomePage--cta-links .HomePage--cta-link {
-   position: relative;
    font-size: 16px;
    font-family: "Noto Sans Display", sans-serif;
    color: #fff;
    text-decoration: none;
-   padding: 0 5px;
-   padding-bottom: 10px;
 }
 .HomePage--cta .HomePage--cta-links .HomePage--cta-link {
    font-size: 14px;
@@ -111,7 +130,12 @@
    margin-bottom: 10px;
 }
 
-.HomePage--cta .HomePage--cta-links .HomePage--cta-link::before {
+.HomePage--cta .HomePage--cta-links .HomePage--cta-link span {
+   position: relative;
+   padding: 0 5px;
+   padding-bottom: 10px;
+}
+.HomePage--cta .HomePage--cta-links .HomePage--cta-link span::before {
    content: "";
    position: absolute;
    bottom: 0;
@@ -121,9 +145,46 @@
    background-color: #fff;
    transition: 200ms ease;
 }
-.HomePage--cta.bottom .HomePage--cta-links .HomePage--cta-link::before {
+.HomePage--cta.bottom .HomePage--cta-links .HomePage--cta-link span::before {
    bottom: 20%;
 }
-.HomePage--cta .HomePage--cta-links .HomePage--cta-link:hover::before {
+.HomePage--cta .HomePage--cta-links .HomePage--cta-link:hover span::before {
    bottom: 30%;
+}
+
+@media (min-width: 1024px) {
+   .container.HomePage--container {
+      max-width: 1024px;
+   }
+
+   .HomePage--container .HomePage--container-main {
+      position: relative;
+      height: 50vh;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 70px;
+   }
+   .HomePage--container .HomePage--container-main::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%; 
+      transform: translate(-50%, -50%);
+      width: 2px;
+      height: 70%;
+      max-height: 650px;
+      background-color: #fff;
+   } 
+
+   .HomePage--cta.bottom .HomePage--cta-links {
+      justify-content: space-between;
+      flex-direction: row;
+      flex-wrap: wrap;
+   }
+   .HomePage--cta.bottom .HomePage--cta-links .HomePage--cta-link {
+      width: calc(50% - 20px);
+      margin: 0 10px;
+      margin-bottom: 15px;
+   }
 }

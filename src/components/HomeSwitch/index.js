@@ -22,33 +22,39 @@ export function HomeSwitch({ bottom = false }) {
 
    return (
       <>
-      <div className="container HomePage--container">
-         <div className={`HomePage--introduction${!bottom? "" : " bottom"}`}>
-            <span className="wrapping-letters--logo">WL</span>
-            <div className="HomePage--introducion-text">
-               <p>
-                  {!bottom
-                     ? `Wrapp any text in your projects in React with Wrapping Letters,
+         <div className="container HomePage--container">
+            <div className="HomePage--container-main">
+               <div
+                  className={`HomePage--introduction${
+                     !bottom ? "" : " bottom"
+                  }`}
+               >
+                  <span className="wrapping-letters--logo">WL</span>
+                  <div className="HomePage--introducion-text">
+                     <p>
+                        {!bottom
+                           ? `Wrapp any text in your projects in React with Wrapping Letters,
                Hover effect, Observer intersection, loading animation and more!
                Forget to wrapping any letters in JSX, wrapping letters will do
                it for you.`
-                     : `Are you ready?, this is the next level to work with letters.`}
-               </p>
+                           : `Are you ready?, this is the next level to work with letters.`}
+                     </p>
+                  </div>
+               </div>
+               <div className={`HomePage--cta${!bottom ? "" : " bottom"}`}>
+                  <button
+                     onClick={handleCopyNpm}
+                     ref={buttonCopyRef}
+                     className="HomePage--cta-copyButton"
+                  >
+                     npm install wrapping-letters-react -D
+                  </button>
+                  <div className={`HomePage--cta-links`}>
+                     {!bottom ? topLinks() : bottomLinks()}
+                  </div>
+               </div>
             </div>
          </div>
-         <div className={`HomePage--cta${!bottom? "" : " bottom"}`}>
-            <button
-               onClick={handleCopyNpm}
-               ref={buttonCopyRef}
-               className="HomePage--cta-copyButton"
-            >
-               npm install wrapping-letters-react -D
-            </button>
-            <div className={`HomePage--cta-links`}>
-               {!bottom ? topLinks() : bottomLinks()}
-            </div>
-         </div>
-      </div>
       </>
    );
 }
