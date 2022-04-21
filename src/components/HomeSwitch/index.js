@@ -1,24 +1,11 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 
+import { useCopy } from "@Hooks/useCopy";
+
 export function HomeSwitch({ bottom = false }) {
    const buttonCopyRef = useRef(null);
 
-   function handleCopyNpm() {
-      var range = document.createRange(),
-         selection = window.getSelection(),
-         contentHolder = buttonCopyRef.current;
-
-      selection.removeAllRanges();
-
-      range.selectNodeContents(contentHolder);
-
-      selection.addRange(range);
-
-      document.execCommand("copy");
-
-      selection.removeAllRanges();
-   }
 
    return (
       <>
@@ -43,7 +30,7 @@ export function HomeSwitch({ bottom = false }) {
                </div>
                <div className={`HomePage--cta${!bottom ? "" : " bottom"}`}>
                   <button
-                     onClick={handleCopyNpm}
+                     onClick={() => useCopy(buttonCopyRef)}
                      ref={buttonCopyRef}
                      className="HomePage--cta-copyButton"
                   >
