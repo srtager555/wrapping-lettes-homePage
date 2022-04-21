@@ -1,0 +1,190 @@
+.HomePage__main {
+}
+.container.HomePage--container {
+   justify-content: flex-end;
+}
+.HomePage--container .HomePage--container-main {
+   width: 100%;
+   height: auto;
+}
+
+.HomePage--introduction,
+.HomePage--cta {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: 90%;
+   max-width: 380px;
+   margin: 0 auto;
+}
+.HomePage--introduction {
+   width: 83%;
+   margin-bottom: 50px;
+}
+.HomePage--introduction.bottom {
+   margin-bottom: 20px;
+}
+
+.HomePage--introducion-text {
+   margin-top: 30px;
+   margin-bottom: 10px;
+}
+.HomePage--introducion-text p {
+   font-family: "Noto Sans Display", sans-serif;
+   font-size: 16px;
+}
+
+.HomePage--cta {
+   max-width: 400px;
+   margin-bottom: 100px;
+}
+.HomePage--cta.bottom {
+   max-width: 420px;
+   margin-bottom: 40px;
+}
+
+.HomePage--cta .HomePage--cta-copyButton {
+   position: relative;
+   font-size: 14px;
+   font-family: "Source Code Pro", monospace;
+   width: 100%;
+   border: none;
+   border-radius: 3px;
+   padding: 13px 16px;
+   color: #fff;
+   background-color: #e07070;
+   cursor: pointer;
+}
+.HomePage--cta .HomePage--cta-copyButton::after {
+   content: "// Thanks you for this opportunity!";
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   width: 100%;
+   background-color: #e07070;
+   opacity: 0;
+   visibility: hidden;
+}
+.HomePage--cta .HomePage--cta-copyButton:active::after {
+   opacity: 1;
+   visibility: visible;
+}
+.HomePage--cta .HomePage--cta-copyButton::before {
+   content: "Copy";
+   position: absolute;
+   top: 0;
+   left: 3%;
+   padding: 5px 10px;
+   background-color: #e07070;
+   color: #fff;
+   border-radius: 3px;
+   font-size: 14px;
+   font-family: "Source Code Pro", monospace;
+   transition: 200ms ease-in-out;
+   z-index: -1;
+}
+.HomePage--cta .HomePage--cta-copyButton:hover::before {
+   top: -70%;
+}
+.HomePage--cta .HomePage--cta-copyButton:active::before {
+   content: "Copied!";
+}
+
+.HomePage--cta .HomePage--cta-links {
+   position: relative;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-top: 60px;
+   padding-top: 20px;
+   width: 90%;
+}
+.HomePage--cta.bottom .HomePage--cta-links {
+   justify-content: flex-start;
+   align-items: flex-start;
+   flex-direction: column;
+   margin-top: 30px;
+}
+.HomePage--cta .HomePage--cta-links::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 1px;
+   background-color: #fff;
+}
+
+.HomePage--cta .HomePage--cta-links .HomePage--cta-link {
+   font-size: 16px;
+   font-family: "Noto Sans Display", sans-serif;
+   color: #fff;
+   text-decoration: none;
+}
+.HomePage--cta .HomePage--cta-links .HomePage--cta-link {
+   font-size: 14px;
+}
+.HomePage--cta.bottom .HomePage--cta-links .HomePage--cta-link {
+   margin-bottom: 10px;
+}
+
+.HomePage--cta .HomePage--cta-links .HomePage--cta-link span {
+   position: relative;
+   padding: 0 5px;
+   padding-bottom: 10px;
+}
+.HomePage--cta .HomePage--cta-links .HomePage--cta-link span::before {
+   content: "";
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   height: 1px;
+   background-color: #fff;
+   transition: 200ms ease;
+}
+.HomePage--cta.bottom .HomePage--cta-links .HomePage--cta-link span::before {
+   bottom: 20%;
+}
+.HomePage--cta .HomePage--cta-links .HomePage--cta-link:hover span::before {
+   bottom: 30%;
+}
+
+@media (min-width: 1024px) {
+   .container.HomePage--container {
+      max-width: 1024px;
+   }
+
+   .HomePage--container .HomePage--container-main {
+      position: relative;
+      height: 50vh;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 70px;
+   }
+   .HomePage--container .HomePage--container-main::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%; 
+      transform: translate(-50%, -50%);
+      width: 2px;
+      height: 70%;
+      max-height: 650px;
+      background-color: #fff;
+   } 
+
+   .HomePage--cta.bottom .HomePage--cta-links {
+      justify-content: space-between;
+      flex-direction: row;
+      flex-wrap: wrap;
+   }
+   .HomePage--cta.bottom .HomePage--cta-links .HomePage--cta-link {
+      width: calc(50% - 20px);
+      margin: 0 10px;
+      margin-bottom: 15px;
+   }
+}
