@@ -40,7 +40,7 @@ export function SlideLetters({ sLettersOpts = {}, scrollPosition }) {
       arrSlide.forEach((element, index) => {
          if (scrollPosition >= document.body.clientHeight - window.innerHeight * 1.05) {
             if (element[0][0] === true) element[1]([true, true]);
-         } else if (scrollPosition < window.innerHeight / 3) {
+         } else if (scrollPosition < window.innerHeight / 10) {
             if (element[0][0] === true) element[1]([true, true]);
          } else {
             if (element[0][0] === true) element[1]([true, false]);
