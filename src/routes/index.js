@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
-import { SlideLetters } from "@Components/slideLetters";
+import { SlideLetters } from "@Components/SlideLetters";
 import { Home } from "@Pages/home";
 
 
