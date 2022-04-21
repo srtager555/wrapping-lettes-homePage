@@ -1,3 +1,14 @@
+:root {
+    --main-color: #2B5A72;
+    --sub-main-color: #213258;
+    --secundary-color-green: #97B77B;
+    --secundary-color-darkGreen: #E8A074;
+    --secundary-color-red: #FF3377;
+    --secundary-color-darkRed: #F00C5B;
+    --secundary-color-blue: #F04AEA;
+    --secundary-color-darkBlue: #9F259A;
+}
+
 * {
     margin: 0;
     padding: 0;
