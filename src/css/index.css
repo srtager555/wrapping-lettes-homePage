@@ -1,12 +1,12 @@
 :root {
     --main-color: #2B5A72;
     --sub-main-color: #213258;
-    --secundary-color-green: #97B77B;
-    --secundary-color-darkGreen: #E8A074;
-    --secundary-color-red: #FF3377;
-    --secundary-color-darkRed: #F00C5B;
-    --secundary-color-blue: #F04AEA;
-    --secundary-color-darkBlue: #9F259A;
+    --secondary-color-green: #97B77B;
+    --secondary-color-darkGreen: #E8A074;
+    --secondary-color-red: #FF3377;
+    --secondary-color-darkRed: #F00C5B;
+    --secondary-color-blue: #F04AEA;
+    --secondary-color-darkBlue: #9F259A;
 }
 
 * {
@@ -18,7 +18,21 @@
 body {
     background-color: #2B5A72;
     color: #fff;
+    transition: 500ms;
 }
+
+body.HomeContentColor0 {
+    background-color: var(--main-color);
+} 
+body.HomeContentColor1 {
+    background-color: var(--secondary-color-green);
+} 
+body.HomeContentColor2 {
+    background-color: var(--secondary-color-red);
+} 
+body.HomeContentColor3 {
+    background-color: var(--secondary-color-blue);
+} 
 
 .container {
     height: 100vh;
