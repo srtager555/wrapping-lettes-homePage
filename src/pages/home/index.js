@@ -6,7 +6,7 @@ import { HomeContentContainer } from "@Components/HomeContentContainer";
 
 import "@Styles/HomePage.css";
 
-export function Home({ setSLettersOpts = {}, scrollPosition }) {
+export function Home({ setSLettersOpts = {}, scrollPosition, callback }) {
    const [colorCounter, setColorCounter] = useState(0);
    const [colorArr, setColorArr] = useState([]);
    const lettersState1 = {
@@ -26,6 +26,18 @@ export function Home({ setSLettersOpts = {}, scrollPosition }) {
       Slide6: [true, false],
    };
 
+   function isResizing() {
+      if (window.innerWidth > 1024) {
+         setSLettersOpts(lettersState2);
+      } else setSLettersOpts({ Slide1: [true, false], Slide2: [true, false] });
+   }
+
+   function a() {
+      if (colorCounter === 3) {
+         setColorCounter(0);
+      } else setColorCounter(colorCounter + 1);
+   }
+
    useLayoutEffect(() => {
       setSLettersOpts({
          Slide1: [true, false],
@@ -35,11 +47,8 @@ export function Home({ setSLettersOpts = {}, scrollPosition }) {
          Slide5: [false, false],
          Slide6: [false, false],
       });
-      window.addEventListener("resize", function () {
-         if (window.innerWidth > 1024) {
-            setSLettersOpts(lettersState2);
-         } else setSLettersOpts({ Slide1: [true, false], Slide2: [true, false] });
-      });
+      window.addEventListener("resize", isResizing);
+      return () => window.removeEventListener("resize", isResizing);
    }, []);
 
    useEffect(() => {
@@ -55,11 +64,10 @@ export function Home({ setSLettersOpts = {}, scrollPosition }) {
       }
    }, [scrollPosition]);
 
-   function a() {
-      if (colorCounter === 3) {
-         setColorCounter(0);
-      } else setColorCounter(colorCounter + 1);
-   }
+   useEffect(()=> {
+      callback();
+   }, [])
+   
    useEffect(() => {
       if (arrContent.length != colorArr.length) {
          a();
