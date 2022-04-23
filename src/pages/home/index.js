@@ -25,6 +25,10 @@ export function Home({ setSLettersOpts = {}, scrollPosition, callback }) {
       Slide5: [true, false],
       Slide6: [true, false],
    };
+   
+
+   
+   callback()
 
    function isResizing() {
       if (window.innerWidth > 1024) {
@@ -64,9 +68,6 @@ export function Home({ setSLettersOpts = {}, scrollPosition, callback }) {
       }
    }, [scrollPosition]);
 
-   useEffect(()=> {
-      callback();
-   }, [])
    
    useEffect(() => {
       if (arrContent.length != colorArr.length) {

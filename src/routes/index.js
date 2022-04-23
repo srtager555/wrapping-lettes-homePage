@@ -8,19 +8,19 @@ import { Navbar } from "@Components/navbar";
 
 export function routes({ scrollPosition }) {
    const [sLettersOpts, setSLettersOpts] = useState({});
-   const [inPath, setInPath] = useState('')
+   const [inPath, setInPath] = useState("");
 
    function Redirect({ to }) {
       let navigate = useNavigate();
       useEffect(() => {
-        navigate(to);
+         navigate(to);
       });
       return null;
-    }
+   }
 
    return (
       <>
-         <Navbar path={inPath} />
+         <Navbar path={inPath} scrollPosition={scrollPosition} />
          <SlideLetters
             sLettersOpts={sLettersOpts}
             scrollPosition={scrollPosition}
@@ -32,7 +32,9 @@ export function routes({ scrollPosition }) {
                   <Home
                      setSLettersOpts={setSLettersOpts}
                      scrollPosition={scrollPosition}
-                     callback={useInPath(setInPath)}
+                     callback={() => {
+                        useInPath(setInPath);
+                     }}
                   />
                }
             />
