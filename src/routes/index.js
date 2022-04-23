@@ -13,7 +13,7 @@ export function routes({ scrollPosition }) {
       <>
         <SlideLetters sLettersOpts={sLettersOpts} scrollPosition={scrollPosition} />
          <Routes>
-            <Route path="/" element={<Home setSLettersOpts={setSLettersOpts} />} />
+            <Route path="/" element={<Home setSLettersOpts={setSLettersOpts} scrollPosition={scrollPosition} />} />
             <Route path="/documentation" element={<div>documetation</div>} />
             <Route path="/*" element={<div>otra linea</div>} />
          </Routes>
