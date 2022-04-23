@@ -113,3 +113,31 @@
    font-size: 1.2em;
    color: #fff;
 }
+
+@media (min-width: 1024px) {
+   .HomeContentContainer--main__content {
+      flex-direction: row;
+   }
+   .HomeContentCode__container {
+      width: 50%;
+      height: 100vh;
+   }
+   .HomeContentCode__container .HomeContentCode__container--buttonCopy {
+      top: 5%;
+      left: 11%;
+   }
+   .HomeContentItem__container {
+      padding: 0 50px;
+   }
+   .HomeContentItem__container--title h2 {
+      font-size: 70px;
+      font-weight: 300;
+      text-align: center;
+      margin-bottom: 80px;
+   }
+   .HomeContentItem__container--description {
+      font-size: 20px;
+      width: 350px;
+      text-align: center;
+   }
+}
