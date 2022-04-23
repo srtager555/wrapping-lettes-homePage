@@ -76,10 +76,10 @@ export function HomeSwitch({ bottom = false }) {
 function topLinks() {
    return (
       <>
-         <Link to="docs/getting-started" className="HomePage--cta-link">
+         {/* <Link to="docs/getting-started" className="HomePage--cta-link">
             <span className="HomePage--cta-link-text">Getting Started</span>
-         </Link>
-         <Link to="docs/api" className="HomePage--cta-link">
+         </Link> */}
+         <Link to="docs/" className="HomePage--cta-link">
             <span className="HomePage--cta-link-text">Documentation</span>
          </Link>
          {/* <Link to="docs/examples" className="HomePage--cta-link">
@@ -100,9 +100,9 @@ function topLinks() {
 function bottomLinks() {
    return (
       <>
-         <Link to="docs/getting-started" className="HomePage--cta-link">
+         {/* <Link to="docs/getting-started" className="HomePage--cta-link">
             <span className="HomePage--cta-link-text">Getting Started</span>
-         </Link>
+         </Link> */}
          <Link to="docs/" className="HomePage--cta-link">
             <span className="HomePage--cta-link-text">Documentation</span>
          </Link>
