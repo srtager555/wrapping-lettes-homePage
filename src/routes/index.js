@@ -1,12 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { useInPath } from "@Hooks/useInPath";
 
 import { SlideLetters } from "@Components/SlideLetters";
-import { Home } from "@Pages/home";
 import { Navbar } from "@Components/navbar";
+import { Home } from "@Pages/home";
+import { Documentation } from "@Pages/documentation";
 
 export function routes({ scrollPosition }) {
+   const sideNavRef = useRef(null);
+
    const [sLettersOpts, setSLettersOpts] = useState({});
    const [inPath, setInPath] = useState("");
 
@@ -20,7 +23,11 @@ export function routes({ scrollPosition }) {
 
    return (
       <>
-         <Navbar path={inPath} scrollPosition={scrollPosition} />
+         <Navbar
+            path={inPath}
+            scrollPosition={scrollPosition}
+            sideNavRef={sideNavRef}
+         />
          <SlideLetters
             sLettersOpts={sLettersOpts}
             scrollPosition={scrollPosition}
@@ -38,7 +45,17 @@ export function routes({ scrollPosition }) {
                   />
                }
             />
-            <Route path="/docs" element={<div>documetation</div>} />
+            <Route
+               path="/docs"
+               element={
+                  <Documentation
+                     anchorRef={sideNavRef}
+                     callback={() => {
+                        useInPath(setInPath);
+                     }}
+                  />
+               }
+            />
             <Route path="/documentation" element={<Redirect to="/docs" />} />
             <Route path="/*" element={<div>otra linea</div>} />
          </Routes>

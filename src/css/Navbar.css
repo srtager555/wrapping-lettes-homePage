@@ -56,7 +56,8 @@
     width: 99%;
     max-width: 640px;
 }
-@media (max-width: 720px) {
+
+@media (max-width: 1100px) {
     .navbar-menu__button {
         height: 10px;
         width: 0px;
