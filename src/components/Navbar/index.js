@@ -3,8 +3,9 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import "@Styles/Navbar.css";
+import "@Styles/SideBarDocs.css";
 
-export function Navbar({ path, scrollPosition }) {
+export function Navbar({ path, scrollPosition, sideNavRef }) {
    const [navState, setNavState] = useState("default");
    const [isVisible, setIsVisible] = useState(false);
    const [openMobileMenu, setOpenMobileMenu] = useState(false);
@@ -96,8 +97,25 @@ export function Navbar({ path, scrollPosition }) {
                </div>
             </div>
          </nav>
-         {a === setNavState ? (
-            <div className="sideBar__docs-container"></div>
+         {path === "/docs" ? (
+            <div
+               className={`sideBar__docs-container${
+                  openMobileMenu ? " active" : ""
+               }`}
+            >
+               <div className="sideBar__docs-dark__Background"></div>
+               <div ref={sideNavRef} className="sideBar__docs-container__links">
+                  <div className="sideBar__docs-container__anchor">
+                     <a href="#principios__basicos">Principios Basicos</a>
+                  </div>
+                  <div className="sideBar__docs-container__anchor">
+                     <a href="#wordOptions">wordOptions</a>
+                  </div>
+                  <div className="sideBar__docs-container__anchor">
+                     <a href="#Structure">Structure</a>
+                  </div>
+               </div>
+            </div>
          ) : null}
       </>
    );
