@@ -1,0 +1,57 @@
+.documentation--container {
+    width: 100%;
+    padding: 100px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.documentation--container__main {
+    width: 90%;
+    max-width: 920px;
+}
+
+.documentation--container__main .documentation--container__title {
+    margin-bottom: 20px;
+    font-family: "Poppins";
+    font-size: 36px;
+}
+.documentation--container__main .documentation--container__title h2 {
+    display: inline-block;
+    position: relative;
+    font-size: inherit;
+    font-weight: 300;
+}
+.documentation--container__main h2::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+}
+.documentation--container__main p {
+    font-family: "Noto Sans Display";
+    font-weight: 300;
+    line-height: 25px;
+    margin-bottom: 30px;
+}
+
+.documentation--container__image {
+    width: 100%;
+    margin-bottom: 30px;
+}
+.documentation--container__image img {
+    width: 100%;
+}
+
+.documentation--container__code {
+    padding: 20px;
+    background-color: #0005;
+    border-radius: 3px;
+}
+.documentation--container__code code {
+    font-size: 16px;
+    font-family: "Source Code Pro";
+}
