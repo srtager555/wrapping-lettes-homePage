@@ -25,10 +25,16 @@ export function Home({ setSLettersOpts = {}, scrollPosition, callback }) {
       Slide5: [true, false],
       Slide6: [true, false],
    };
-   
 
-   
-   callback()
+   callback();
+
+   function scrollToTop() {
+      window.scroll(0, 0);
+   }
+
+   useEffect(() => {
+      scrollToTop();
+   }, []);
 
    function isResizing() {
       if (window.innerWidth > 1024) {
@@ -68,7 +74,6 @@ export function Home({ setSLettersOpts = {}, scrollPosition, callback }) {
       }
    }, [scrollPosition]);
 
-   
    useEffect(() => {
       if (arrContent.length != colorArr.length) {
          a();

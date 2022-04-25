@@ -7,6 +7,8 @@ import { Navbar } from "@Components/navbar";
 import { Home } from "@Pages/home";
 import { Documentation } from "@Pages/documentation";
 
+import NotFound from "@Pages/notFound";
+
 export function routes({ scrollPosition }) {
    const sideNavRef = useRef(null);
 
@@ -50,6 +52,7 @@ export function routes({ scrollPosition }) {
                element={
                   <Documentation
                      anchorRef={sideNavRef}
+                     setSLettersOpts={setSLettersOpts}
                      callback={() => {
                         useInPath(setInPath);
                      }}
@@ -57,7 +60,10 @@ export function routes({ scrollPosition }) {
                }
             />
             <Route path="/documentation" element={<Redirect to="/docs" />} />
-            <Route path="/*" element={<div>otra linea</div>} />
+            <Route
+               path="/*"
+               element={<NotFound setSLettersOpts={setSLettersOpts} />}
+            />
          </Routes>
       </>
    );

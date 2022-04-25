@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { TitleContainer } from "@Components/titleContainer";
 import { ParagraphContainer as Parag } from "@Components/paragraphContainer";
@@ -8,8 +8,26 @@ import { CodeContainer } from "@Components/codeContainer";
 import "@Styles/Documentation.css";
 import { SectionContainerDocs } from "../../components/SectionContainerDocs";
 
-export function Documentation({ callback, anchorRef }) {
+export function Documentation({ callback, anchorRef, setSLettersOpts }) {
    callback();
+
+   function scrollToTop() {
+      window.scroll(0, 0);
+   }
+
+   useEffect(() => {
+      scrollToTop();
+      document.body.classList = "";
+      setSLettersOpts({
+         Slide1: [false, false],
+         Slide2: [false, false],
+         Slide3: [false, false],
+         Slide4: [false, false],
+         Slide5: [false, false],
+         Slide6: [false, false]
+      })
+   }, []);
+
    return (
       <div className="documentation--container">
          <SectionContainerDocs anchorRef={anchorRef}>
@@ -29,7 +47,10 @@ export function Documentation({ callback, anchorRef }) {
             />
             <CodeContainer code={`<WrappingLetters word="XD" />`} />
          </SectionContainerDocs>
-         <SectionContainerDocs anchorRef={anchorRef} sectionClass="principios__basicos">
+         <SectionContainerDocs
+            anchorRef={anchorRef}
+            sectionClass="principios__basicos"
+         >
             <TitleContainer title="Principios Basicos" />
             <Parag
                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
