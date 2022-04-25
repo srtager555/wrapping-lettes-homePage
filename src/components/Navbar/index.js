@@ -97,7 +97,7 @@ export function Navbar({ path, scrollPosition, sideNavRef }) {
                </div>
             </div>
          </nav>
-         {path === "/docs" ? (
+         {path === "/docs" || path === "/docs/" ? (
             <div
                className={`sideBar__docs-container${
                   openMobileMenu ? " active" : ""
@@ -106,13 +106,13 @@ export function Navbar({ path, scrollPosition, sideNavRef }) {
                <div className="sideBar__docs-dark__Background"></div>
                <div ref={sideNavRef} className="sideBar__docs-container__links">
                   <div className="sideBar__docs-container__anchor">
-                     <a href="#principios__basicos">Principios Basicos</a>
+                     <a onClick={handleActiveMobileMenu} href="#principios__basicos">Principios Basicos</a>
                   </div>
                   <div className="sideBar__docs-container__anchor">
-                     <a href="#wordOptions">wordOptions</a>
+                     <a onClick={handleActiveMobileMenu} href="#wordOptions">wordOptions</a>
                   </div>
                   <div className="sideBar__docs-container__anchor">
-                     <a href="#Structure">Structure</a>
+                     <a onClick={handleActiveMobileMenu} href="#Structure">Structure</a>
                   </div>
                </div>
             </div>
