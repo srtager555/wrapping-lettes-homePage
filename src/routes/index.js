@@ -3,7 +3,7 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 import { useInPath } from "@Hooks/useInPath";
 
 import { SlideLetters } from "@Components/SlideLetters";
-import { Navbar } from "@Components/navbar";
+import { Navbar } from "@Components/Navbar";
 import { Home } from "@Pages/home";
 import { Documentation } from "@Pages/documentation";
 
