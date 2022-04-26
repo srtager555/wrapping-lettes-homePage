@@ -1,0 +1,101 @@
+.sideBar__docs-container {
+   position: fixed;
+   top: 0;
+   left: 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   height: 100vh;
+   z-index: 99;
+}
+.sideBar__docs-container .sideBar__docs-container__links {
+   width: 70%;
+   height: 70%;
+   border-left: 3px solid #fff;
+   padding: 10px 0;
+   padding-left: 20px;
+}
+.sideBar__docs-container
+   .sideBar__docs-container__links
+   .sideBar__docs-container__anchor {
+   margin-top: 20px;
+}
+.sideBar__docs-container
+   .sideBar__docs-container__links
+   .sideBar__docs-container__anchor:first-child {
+   margin-top: 0px;
+}
+.sideBar__docs-container
+   .sideBar__docs-container__links
+   .sideBar__docs-container__anchor
+   a {
+   position: relative;
+   display: inline-block;
+   padding-bottom: 5px;
+   color: #fff;
+   font-family: "Noto Sans Display", sans-serif;
+   text-transform: capitalize;
+   text-decoration: none;
+}
+.sideBar__docs-container
+   .sideBar__docs-container__links
+   .sideBar__docs-container__anchor
+   a::before {
+   content: "";
+   position: absolute;
+   bottom: 0;
+   left: 50%;
+   transform: translateX(-50%);
+   height: 1px;
+   width: 0%;
+   background-color: #fff;
+   transition: 200ms;
+}
+.sideBar__docs-container
+   .sideBar__docs-container__links
+   .sideBar__docs-container__anchor
+   a:hover::before {
+   width: 100%;
+}
+.sideBar__docs-container
+   .sideBar__docs-container__links
+   .sideBar__docs-container__anchor.active
+   a::before {
+   width: 100%;
+}
+
+.sideBar__docs-container .sideBar__docs-dark__Background {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.9);
+   z-index: -1;
+}
+
+@media (max-width: 1100px) {
+   .sideBar__docs-container {
+      height: 130%;
+      transition: 1s ease-in-out;
+      opacity: 0;
+      visibility: hidden;
+   }
+   .sideBar__docs-container.active {
+      height: 100%;
+      opacity: 1;
+      visibility: visible;
+   }
+}
+@media (min-width: 1100px) {
+   .sideBar__docs-container {
+      left: 5%;
+      height: 100%;
+      max-width: 250px;
+   }
+
+   .sideBar__docs-container .sideBar__docs-dark__Background {
+      display: none;
+   }
+}

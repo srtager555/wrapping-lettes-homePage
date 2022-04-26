@@ -1,28 +1,42 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
+
+import { useCopy } from "@Hooks/useCopy";
 
 export function HomeSwitch({ bottom = false }) {
    const buttonCopyRef = useRef(null);
+   const contentRef = useRef(null);
 
-   function handleCopyNpm() {
-      var range = document.createRange(),
-         selection = window.getSelection(),
-         contentHolder = buttonCopyRef.current;
+   function handleObserProjects(entries) {
+      const [entry] = entries;
 
-      selection.removeAllRanges();
+      if (entry.isIntersecting) {
 
-      range.selectNodeContents(contentHolder);
-
-      selection.addRange(range);
-
-      document.execCommand("copy");
-
-      selection.removeAllRanges();
+         document.body.className = "";
+      }
    }
+
+   useEffect(() => {
+      const options = {
+         root: null,
+         rootMargin: `0px`,
+         threshold: .5,
+      };
+
+      const observer = new IntersectionObserver(handleObserProjects, options);
+      if (contentRef.current) {
+         observer.observe(contentRef.current);
+      }
+      return () => {
+         if (contentRef.current) {
+            observer.unobserve(contentRef.current);
+         }
+      };
+   }, [contentRef]);
 
    return (
       <>
-         <div className="container HomePage--container">
+         <div ref={contentRef} className="container HomePage--container">
             <div className="HomePage--container-main">
                <div
                   className={`HomePage--introduction${
@@ -43,7 +57,7 @@ export function HomeSwitch({ bottom = false }) {
                </div>
                <div className={`HomePage--cta${!bottom ? "" : " bottom"}`}>
                   <button
-                     onClick={handleCopyNpm}
+                     onClick={() => useCopy(buttonCopyRef)}
                      ref={buttonCopyRef}
                      className="HomePage--cta-copyButton"
                   >
@@ -62,10 +76,10 @@ export function HomeSwitch({ bottom = false }) {
 function topLinks() {
    return (
       <>
-         <Link to="docs/getting-started" className="HomePage--cta-link">
+         {/* <Link to="docs/getting-started" className="HomePage--cta-link">
             <span className="HomePage--cta-link-text">Getting Started</span>
-         </Link>
-         <Link to="docs/api" className="HomePage--cta-link">
+         </Link> */}
+         <Link to="docs/" className="HomePage--cta-link">
             <span className="HomePage--cta-link-text">Documentation</span>
          </Link>
          {/* <Link to="docs/examples" className="HomePage--cta-link">
@@ -86,9 +100,9 @@ function topLinks() {
 function bottomLinks() {
    return (
       <>
-         <Link to="docs/getting-started" className="HomePage--cta-link">
+         {/* <Link to="docs/getting-started" className="HomePage--cta-link">
             <span className="HomePage--cta-link-text">Getting Started</span>
-         </Link>
+         </Link> */}
          <Link to="docs/" className="HomePage--cta-link">
             <span className="HomePage--cta-link-text">Documentation</span>
          </Link>

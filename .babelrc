@@ -6,7 +6,9 @@
           "@Styles": "./src/css",
           "@Src": "./src",
           "@Components": "./src/components",
-          "@Pages": "./src/pages"
+          "@Pages": "./src/pages",
+          "@Hooks": "./src/hooks",
+          "@HomeLayout": "./src/Layouts/HomeContent"
         }
       }]
     ]

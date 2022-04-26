@@ -1,0 +1,55 @@
+.notFound_container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   width: 100%;
+   height: 100vh;
+}
+
+.notFound_container .notFound__container-404 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+.notFound_container .notFound__container-404 .notFound__container-404__404 {
+    font-family: "Poppins";
+    font-size: 150px;
+    line-height: 120px;
+}
+.notFound_container .notFound__container-404 .notFound__container-404__notMatch {
+    font-family: "Noto Sans Display";
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.notFound_container .notFound__container-links {
+    display: flex;
+}
+.notFound_container .notFound__container-links a {
+    position: relative;
+    font-family: "Noto Sans Display";
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 5px;
+    transition: 100ms ease-in;
+}
+.notFound_container .notFound__container-links a:active {
+    transform: scale(0.9);
+}
+.notFound_container .notFound__container-links a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 1px;
+    width: 0%;
+    background-color: #fff;
+    transition: .5s ease-in-out;
+}
+.notFound_container .notFound__container-links a:hover::before {
+    width: 100%;
+}
