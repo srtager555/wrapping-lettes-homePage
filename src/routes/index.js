@@ -8,6 +8,7 @@ import { Home } from "@Pages/home";
 import { Documentation } from "@Pages/documentation";
 
 import NotFound from "@Pages/notFound";
+import Footer from "@Components/Footer";
 
 export function routes({ scrollPosition }) {
    const sideNavRef = useRef(null);
@@ -65,6 +66,7 @@ export function routes({ scrollPosition }) {
                element={<NotFound setSLettersOpts={setSLettersOpts} />}
             />
          </Routes>
+         <Footer />
       </>
    );
 }

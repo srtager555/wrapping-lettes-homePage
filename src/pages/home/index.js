@@ -64,7 +64,7 @@ export function Home({ setSLettersOpts = {}, scrollPosition, callback }) {
    useEffect(() => {
       if (
          scrollPosition >=
-         document.body.clientHeight - window.innerHeight * 1.05
+         document.body.clientHeight - window.innerHeight * 1.50
       ) {
          setSLettersOpts(lettersState1);
       } else if (scrollPosition < window.innerHeight / 10) {

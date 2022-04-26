@@ -1,0 +1,31 @@
+.footer--container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 90%;
+    max-width: 800px;
+    padding-top: 10px;
+    margin: auto;
+    margin-bottom: 10px;
+    border-top: 1px solid #fff;
+}
+.footer--container .footer--image {
+    height: 100px;
+}
+.footer--container .footer--image a{
+    display: inline-block;
+    height: 100%;
+}
+.footer--container .footer--image a img{
+    height: 100%;
+}
+.footer--container span{
+    font-family: "Noto Sans Display";
+}
+
+.footer--text {
+    display: flex;
+    flex-direction: column;
+
+}
