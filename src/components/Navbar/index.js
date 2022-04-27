@@ -106,7 +106,10 @@ export function Navbar({ path, scrollPosition, sideNavRef }) {
                <div className="sideBar__docs-dark__Background"></div>
                <div ref={sideNavRef} className="sideBar__docs-container__links">
                   <div className="sideBar__docs-container__anchor">
-                     <a onClick={handleActiveMobileMenu} href="#principios__basicos">Principios Basicos</a>
+                     <a onClick={handleActiveMobileMenu} href="#getting-started">Getting Started</a>
+                  </div>
+                  <div className="sideBar__docs-container__anchor">
+                     <a onClick={handleActiveMobileMenu} href="#word-options">WordOptions</a>
                   </div>
                   <div className="sideBar__docs-container__anchor">
                      <a onClick={handleActiveMobileMenu} href="#wordOptions">wordOptions</a>
