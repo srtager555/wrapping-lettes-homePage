@@ -50,6 +50,7 @@
 
 .documentation--container__code {
    padding: 20px;
+   margin-bottom: 30px;
    background-color: #0005;
    border-radius: 3px;
 }

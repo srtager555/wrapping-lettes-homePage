@@ -24,29 +24,44 @@ export function Documentation({ callback, anchorRef, setSLettersOpts }) {
          Slide3: [false, false],
          Slide4: [false, false],
          Slide5: [false, false],
-         Slide6: [false, false]
-      })
+         Slide6: [false, false],
+      });
    }, []);
 
    return (
       <div className="documentation--container">
          <SectionContainerDocs anchorRef={anchorRef}>
-            <TitleContainer title="Principios Basicos" />
+            <TitleContainer title="Getting startted" />
             <Parag
-               text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-               nec mi quam. Sed dolor magna, facilisis quis nisl id, gravida
-               condimentum turpis. Donec sagittis id dui nec tempor. Donec
-               maximus sit amet nulla vitae elementum. Sed nec vestibulum ipsum."
+               text={`Wrapping Letters is easy to use!.`}
             />
-            <ImageContainer src="https://i.ibb.co/xXHxDTb/the-Future1.jpg" />
-            <Parag
-               text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-               nec mi quam. Sed dolor magna, facilisis quis nisl id, gravida
-               condimentum turpis. Donec sagittis id dui nec tempor. Donec
-               maximus sit amet nulla vitae elementum. Sed nec vestibulum ipsum."
+            <CodeContainer
+               code={`import React from "react";
+import WrappingLetters from "wrapping-letters-react";
+
+
+function App() {
+  return <WrappingLetters  />;
+}
+
+export default App;`}
             />
-            <CodeContainer code={`<WrappingLetters word="XD" />`} />
+            <Parag text={`Wrapping Letters is a component for react with the goal of to simplify the job to wrap letters, The component when is initialization without props, it returned a default word with the default: Hello World !!! <3`} />
+            <Parag text={`The component <WrappingLetters /> always returns each letter of the word or phrase within a <span /> each letter.`} />
+            <Parag text={`!IMPORTANT The component only returns the single letters, they are not inside any extra tag.`} />
+            <CodeContainer
+               code={`<span>H</span>
+<span>e</span>
+<span>l</span>
+<span>l</span>
+<span>o</span>
+<span> </span>
+/..
+`}
+            />
+            <Parag text="If you want modifies the word, call the prop 'word', this prop only accept strings" />
          </SectionContainerDocs>
+
          <SectionContainerDocs
             anchorRef={anchorRef}
             sectionClass="principios__basicos"
