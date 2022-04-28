@@ -92,18 +92,19 @@ export default App;`}
             <TitleContainer title="{ ClassToAdd: <String> }" type="h3" />
             <Parag text="The work of ClassToAdd is add a general class to each element, this property chaged when Structure is called(In the section of structe has more info to about it). " />
 
-            <CodeContainer code={`<WrappingLetters 
+            <CodeContainer
+               code={`<WrappingLetters 
    wordOptions={[{
       ClassToAdd: "my-class",
    }]} 
-/>`} 
-
+/>`}
             />
 
             <TitleContainer title="{ SelectClass: <Object> }" type="h3" />
             <Parag text="SelecClass is your best friend when you need add a class special to a particular letter, word or phrase." />
 
-            <CodeContainer code={`<WrappingLetters 
+            <CodeContainer
+               code={`<WrappingLetters 
    wordOptions={[{
       word: "I have lag, my ping is up to 300ms"
       ClassToAdd: "my-class",
@@ -113,13 +114,45 @@ export default App;`}
          spaceBetweenWord: false,
       },
    }]} 
-/>`} 
+/>`}
             />
 
-            
+            <TitleContainer title="wordToSearch: <String>" type="h4" />
+            <Parag text="Is the word to search, only accept strings for now!." />
 
+            <TitleContainer title="classToAdd: <String>" type="h4" />
+            <Parag text="Is the class to add a the <span>" />
 
+            <TitleContainer title="spaceBetweenWord: <Boolean>" type="h4" />
+            <Parag text="Is the a conditional for the search (default is false)." />
 
+            <Parag text='For example: wordToSearch: "ping" has the word "ping" but the algorithm can search for a word within other words and also being alone, spaceBeetwenWord in true only allows searching for the word alone, in false searches everywhere' />
+
+            <TitleContainer title="!IMPORTANT" type="h4" />
+            <Parag text='"SelectClass" look for all the times the word is repeated, spaceBetweenWord is important for avoiding problems' />
+
+            <TitleContainer title="{ PerWord: <Boolean> }" type="h3" />
+            <Parag text="PerWord is an attribute of wordOptions to wrap each word instead of wrapping each letter (default is false)" />
+
+            <CodeContainer
+               code={`<WrappingLetters 
+   wordOptions={[{
+      word: "I have lag, my ping is up to 300ms"
+      PerWord: true,
+   }]} 
+/>`}
+            />
+
+            <Parag text="the return is:" />
+
+            <CodeContainer
+               code={`<span>I</span>
+<span>have </span>
+<span>lag, </span>
+<span>my</span>
+/...
+`}
+            />
          </SectionContainerDocs>
 
          <SectionContainerDocs anchorRef={anchorRef} sectionClass="wordOptions">
