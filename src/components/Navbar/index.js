@@ -109,13 +109,10 @@ export function Navbar({ path, scrollPosition, sideNavRef }) {
                      <a onClick={handleActiveMobileMenu} href="#getting-started">Getting Started</a>
                   </div>
                   <div className="sideBar__docs-container__anchor">
-                     <a onClick={handleActiveMobileMenu} href="#word-options">WordOptions</a>
+                     <a onClick={handleActiveMobileMenu} href="#word-options">wordOptions</a>
                   </div>
                   <div className="sideBar__docs-container__anchor">
-                     <a onClick={handleActiveMobileMenu} href="#wordOptions">wordOptions</a>
-                  </div>
-                  <div className="sideBar__docs-container__anchor">
-                     <a onClick={handleActiveMobileMenu} href="#Structure">Structure</a>
+                     <a onClick={handleActiveMobileMenu} href="#structure">structure</a>
                   </div>
                </div>
             </div>

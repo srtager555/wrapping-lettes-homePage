@@ -155,39 +155,74 @@ export default App;`}
             />
          </SectionContainerDocs>
 
-         <SectionContainerDocs anchorRef={anchorRef} sectionClass="wordOptions">
-            <TitleContainer title="Principios Basicos" />
-            <Parag
-               text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-               nec mi quam. Sed dolor magna, facilisis quis nisl id, gravida
-               condimentum turpis. Donec sagittis id dui nec tempor. Donec
-               maximus sit amet nulla vitae elementum. Sed nec vestibulum ipsum."
+         <SectionContainerDocs anchorRef={anchorRef} sectionClass="structure">
+            <TitleContainer title="How to add a special # structure" />
+            <Parag text="Sometimes a special structure is needed for the letters or words to be wrapped, structure is the solution of this problem." />
+
+            <Parag text="Is so easy to use:" />
+
+            <CodeContainer
+               code={`import React from 'react'
+import WrappingLetters from 'wrapping-letters-react'
+
+function App(){
+    return(
+        <WrappingLetters 
+            word='This is the sentence to wrapped'
+            wordOptions={[
+                {
+                    SelectClass: {
+                        wordToSearch: 'sentence',
+                        ClassToAdd: 'specialClass',
+                        spaceBeetwenWord: true,,
+                    },
+                }
+            ]}
+            structure={ReactComponent}
+        />
+    )
+}`}
             />
-            <ImageContainer src="https://i.ibb.co/xXHxDTb/the-Future1.jpg" />
-            <Parag
-               text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-               nec mi quam. Sed dolor magna, facilisis quis nisl id, gravida
-               condimentum turpis. Donec sagittis id dui nec tempor. Donec
-               maximus sit amet nulla vitae elementum. Sed nec vestibulum ipsum."
-            />
-            <CodeContainer code={`<WrappingLetters word="XD" />`} />
-         </SectionContainerDocs>
-         <SectionContainerDocs anchorRef={anchorRef} sectionClass="Structure">
-            <TitleContainer title="Principios Basicos" />
-            <Parag
-               text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-               nec mi quam. Sed dolor magna, facilisis quis nisl id, gravida
-               condimentum turpis. Donec sagittis id dui nec tempor. Donec
-               maximus sit amet nulla vitae elementum. Sed nec vestibulum ipsum."
-            />
-            <ImageContainer src="https://i.ibb.co/xXHxDTb/the-Future1.jpg" />
-            <Parag
-               text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-               nec mi quam. Sed dolor magna, facilisis quis nisl id, gravida
-               condimentum turpis. Donec sagittis id dui nec tempor. Donec
-               maximus sit amet nulla vitae elementum. Sed nec vestibulum ipsum."
-            />
-            <CodeContainer code={`<WrappingLetters word="XD" />`} />
+            <Parag text="structure modify the wrapper for more flexibility to do animations or whatever you can think of." />
+
+            <CodeContainer 
+               code={`// React component example
+
+function ReactComponent({letter, cssClass, ...props}) {
+    return(
+        <div 
+            className={\`container-letter \${cssClass}\`} 
+            {...props}
+        >
+            <span className="letter-wrapp">{letter}</span>
+        </div>
+    )
+} `}
+         />
+
+         <Parag text="Being able to make a personalized structure opens a new sea of ​​possibilities for the use of Wrapping-letters" />
+         
+         <TitleContainer title="!IMPORTANT" type="h4" />
+         <Parag text="It is suggested to put out cssClass of the descontruction, if anyways not used, for evit syntax errors." />
+
+         <TitleContainer title="The list of element to send a the component for now is small:" type="h4" />
+         
+         <TitleContainer title="letter" type="h4" />
+         <Parag text="Is the letter to be wrapped." />
+         
+         <TitleContainer title="cssClass" type="h4" />
+         <Parag text="Is the special css class" />
+
+         <TitleContainer title="!IMPORTANT" type="h4" />
+         <Parag text=" The elements under this line, cannot be assigned for their key name, only can be used with the deconstruction." />
+
+         <TitleContainer title="key" type="h4" />
+         <Parag text="Is the the key :3 ({wrappedElement}-{indexNumber})" />
+
+         <TitleContainer title="!IMPORTANT" type="h4" />
+         <Parag text="The classToAdd attribute of wordOptions, is disable when the structure is active, if you want a css class use className in the component." />
+
+         <Parag text="Thanks for you visit :v" />
          </SectionContainerDocs>
       </div>
    );
