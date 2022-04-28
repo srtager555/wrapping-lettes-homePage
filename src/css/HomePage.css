@@ -152,6 +152,7 @@
    bottom: 30%;
 }
 
+
 @media (min-width: 1024px) {
    .container.HomePage--container {
       max-width: 1024px;

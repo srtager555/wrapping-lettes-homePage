@@ -1,17 +1,48 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
+import WL from "wrapping-letters-react";
+import anime from "animejs";
 
-function a(){
-    return [
-        <span>Esto es un titulo de prueba.</span>,
-      "esto es una prueba para ver como estan los estilos css del component JSX que hice hoy en la madrugada",
-    ]
+function Container() {
+   const letterContainer = useRef(null);
+
+   useEffect(() => {
+      anime({
+         targets: letterContainer.current.children,
+         translateY: [0, 5, -5, 0],
+         duration: 1000,
+         loop: true,
+         easing: "easeInQuad",
+         delay: anime.stagger(100),
+      });
+   }, []);
+
+   return (
+      <div ref={letterContainer} className="letter-container">
+         <WL
+            word="Wrapp any letter is easy"
+         />
+      </div>
+   );
 }
 
 export function Content1() {
    return [
-      a(),
-      `Esto es el codigo de la prueba, lorem
-      ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      [
+         <Container />,
+         "Simplify your code with the simple sintaxis of WL, Is very ease to use.",
+      ],
       `
+import WL from "wrapping-letters-react";
+
+return (
+   <div 
+      className="letter-container"
+   >
+      <WL
+         word="Wrapp any letter is easy"
+      />
+   </div>
+);
+      `,
    ];
 }

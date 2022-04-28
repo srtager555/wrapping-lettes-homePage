@@ -24,7 +24,24 @@
    font-size: inherit;
    font-weight: 300;
 }
-.documentation--container__main h2::before {
+.documentation--container__main .documentation--container__title h3 {
+   display: inline-block;
+   position: relative;
+   font-size: inherit;
+   font-weight: 300;
+   font-size: 25px;
+}
+.documentation--container__main .documentation--container__title h4 {
+   display: inline-block;
+   position: relative;
+   font-size: inherit;
+   font-weight: 300;
+   font-family: "Noto Sans Display";
+   font-size: 20px;
+}
+.documentation--container__main h2::before, 
+.documentation--container__main h3::before
+{
    content: "";
    position: absolute;
    bottom: 0;
@@ -50,6 +67,7 @@
 
 .documentation--container__code {
    padding: 20px;
+   margin-bottom: 30px;
    background-color: #0005;
    border-radius: 3px;
 }

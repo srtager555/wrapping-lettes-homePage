@@ -1,0 +1,17 @@
+.letter-container span {
+   display: inline-block;
+   white-space: pre-wrap;
+}
+
+.letter-container .letter-wrapp.bold-letter {
+   font-weight: 500;
+}
+.letter-container .container-letter {
+    display: inline;
+}
+.letter-container .container-letter.pack-letter {
+    border-top: solid 1px #fff;
+}
+.letter-container .container-letter.pack-letter {
+    border-bottom: solid 1px #fff;
+}

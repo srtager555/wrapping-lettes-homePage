@@ -106,9 +106,9 @@ function bottomLinks() {
          <Link to="docs/" className="HomePage--cta-link">
             <span className="HomePage--cta-link-text">Documentation</span>
          </Link>
-         <Link to="docs/versions" className="HomePage--cta-link">
+         {/* <Link to="docs/versions" className="HomePage--cta-link">
             <span className="HomePage--cta-link-text">Versions</span>
-         </Link>
+         </Link> */}
          <a
             href="https://www.npmjs.com/package/wrapping-letters-react"
             target="_blank"
