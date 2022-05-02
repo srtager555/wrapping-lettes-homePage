@@ -1,0 +1,14 @@
+.c, .ch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+.ch {
+    /* width: 444px;  mobile */
+    /* height: 260px; */ 
+    width: 260px;
+    height: 450px;
+    border: solid 1px #fff;
+}

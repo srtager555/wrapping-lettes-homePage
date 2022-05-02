@@ -9,6 +9,7 @@ import { Documentation } from "@Pages/documentation";
 
 import NotFound from "@Pages/notFound";
 import Footer from "@Components/Footer";
+import Multi from "../pages/multi";
 
 export function routes({ scrollPosition }) {
    const sideNavRef = useRef(null);
@@ -62,11 +63,22 @@ export function routes({ scrollPosition }) {
             />
             <Route path="/documentation" element={<Redirect to="/docs" />} />
             <Route
+               path="/multi"
+               element={
+                  <Multi
+                     setSLettersOpts={setSLettersOpts}
+                     callback={() => {
+                        useInPath(setInPath);
+                     }}
+                  />
+               }
+            />
+            <Route
                path="/*"
                element={<NotFound setSLettersOpts={setSLettersOpts} />}
             />
          </Routes>
-         <Footer />
+         {/* <Footer />  */}
       </>
    );
 }
